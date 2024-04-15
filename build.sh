@@ -11,7 +11,7 @@ docker build -t bia .
 docker tag bia:latest $ECR_ID/bia:$versao
 docker push $ECR_ID/bia:$versao
 rm .env 2> /dev/null
-#------GERA COMPOSE
+#------GERA COMPOSE-------------
 echo TAG=$versao >> .env
 docker compose -f docker-compose-eb.yml config >> docker-compose-dev.yml
 mv docker-compose-dev.yml docker-compose.yml
