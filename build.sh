@@ -10,13 +10,10 @@ aws ecr get-login-password --region us-east-1 --profile bia-serverless | docker 
 docker build -t bia .
 docker tag bia:latest $ECR_ID/bia:$versao
 docker push $ECR_ID/bia:$versao
-cat .env
-sleep 5
 rm .env 2> /dev/null
 #------GERA COMPOSE-------------
 echo TAG=$versao >> .env
-cat .env
-sleep 5
+echo ECR_ID1=$ECR_ID >> .env
 docker compose -f docker-compose-eb.yml config >> docker-compose-dev.yml
 mv docker-compose-dev.yml docker-compose.yml
 #./gerar-compose.sh
