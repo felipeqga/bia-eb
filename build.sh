@@ -16,7 +16,7 @@ echo TAG=$versao >> .env
 docker compose -f docker-compose-eb.yml config >> docker-compose-dev.yml
 mv docker-compose-dev.yml docker-compose.yml
 #./gerar-compose.sh
-#------------
+#-----------------
 rm bia-versao-*zip
 zip -r bia-versao-$versao.zip docker-compose.yml
 git checkout docker-compose.yml
