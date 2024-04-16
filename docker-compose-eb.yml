@@ -8,4 +8,4 @@ services:
       DB_USER: postgres
       DB_PWD: kZJxQjdXnoGehYWVbKhV
       DB_PORT: 5432
-      DB_HOST: bia-beanstalk-rds.ctcq4u628ebj.us-east-1.rds.amazonaws.com
+      DB_HOST: database-1.ctcq4u628ebj.us-east-1.rds.amazonaws.com
