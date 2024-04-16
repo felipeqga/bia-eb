@@ -6,5 +6,6 @@ services:
       - 80:8080
     environment:
       DB_USER: postgres
-      DB_PWD: postgres
+      DB_PWD: 2SlYjxyVhxtNnra4XcTK
       DB_PORT: 5432
+      DB_HOST: bia.ctcq4u628ebj.us-east-1.rds.amazonaws.com
