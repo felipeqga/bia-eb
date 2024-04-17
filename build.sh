@@ -20,7 +20,7 @@ mv docker-compose-dev.yml docker-compose.yml
 #-----------------SEM O *EB CLI*----OBS: COmenta e descomenta de acordo com uso
 #rm bia-versao-*zip
 #zip -r bia-versao-$versao.zip docker-compose.yml
-#-----------------VIA  *EB CLI*----OBS: COmenta e descomenta de acordo com uso
+#-----------------VIA  *EB CLI*----OBS: COmenta e descomenta de acordo com uso.
 rm bia-versao.zip
 zip -r bia-versao.zip docker-compose.yml
 #-------------------------------
