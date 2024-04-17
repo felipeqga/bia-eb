@@ -1,2 +1,2 @@
 ./build.sh
-eb deploy --staged --profile bia-serverless
+eb deploy --staged
