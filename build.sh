@@ -17,7 +17,11 @@ echo ECR_ID1=$ECR_ID >> .env
 docker compose -f docker-compose-eb.yml config >> docker-compose-dev.yml
 mv docker-compose-dev.yml docker-compose.yml
 #./gerar-compose.sh
-#-----------------
-rm bia-versao-*zip
-zip -r bia-versao-$versao.zip docker-compose.yml
+#-----------------SEM O *EB CLI*----OBS: COmenta e descomenta de acordo com uso
+#rm bia-versao-*zip
+#zip -r bia-versao-$versao.zip docker-compose.yml
+#-----------------VIA  *EB CLI*----OBS: COmenta e descomenta de acordo com uso
+rm bia-versao.zip
+zip -r bia-versao.zip docker-compose.yml
+#-------------------------------
 git checkout docker-compose.yml

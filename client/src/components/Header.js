@@ -19,7 +19,7 @@ const Header = ({ title, onAdd, showAdd }) => {
 };
 
 Header.defaultProps = {
-  title: "BIA EB V6 SALVANDO DADOS NO *RDS*",
+  title: "BIA EB V1 - EB CLI",
 };
 
 export default Header;
