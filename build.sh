@@ -1,3 +1,4 @@
+source erro.sh
 versao1=$(git rev-parse HEAD | cut -c 1-7)
 echo $versao1
 data=$(date '+%Y-%m-%d')
@@ -7,6 +8,7 @@ echo $versao
 ECR_ID=557772028142.dkr.ecr.us-east-1.amazonaws.com
 echo $ECR_ID
 aws ecr get-login-password --region us-east-1 --profile bia-serverless | docker login --username AWS --password-stdin $ECR_ID
+checar_ultimo_comando
 docker build -t bia .
 docker tag bia:latest $ECR_ID/bia:$versao
 docker push $ECR_ID/bia:$versao
