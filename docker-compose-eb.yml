@@ -1,13 +1,8 @@
 version: "3.8"
 services:
   server:
+    #build:
+    container_name: bia
     image: ${ECR_ID1}/bia:${TAG}
     ports:
       - 80:8080
-    environment:
-      DB_USER: postgres
-      DB_PWD: fNILy8YfTHQF4ZHqxVYb
-      DB_PORT: 5432
-      DB_HOST: bia-eb-alb.ctcq4u628ebj.us-east-1.rds.amazonaws.com
-      DB_SSL__REJECT_UNAUTHORIZED: false
-      WEBSOCKETS_ENABLED: true
