@@ -28,13 +28,17 @@ echo TAG=$versao >> .env
 echo ECR_ID1=$ECR_ID >> .env
 docker compose -f docker-compose-eb.yml config --no-normalize >> docker-compose-dev.yml
 gsed -i '/^name:/d' docker-compose-dev.yml
-#gsed -i 's/container_name: bia/env_file: .env/g' docker-compose-dev.yml
-gsed -i '/server:$/a \ env_file: .env' docker-compose-dev.yml
-gsed -e "s/\r//g" docker-compose-dev.yml > docker-compose-dev2.yml
-rm  docker-compose-dev.yml 2> /dev/null
-cat  docker-compose-dev2.yml | col -b > docker-compose-dev3.yml
-rm  docker-compose-dev2.yml 2> /dev/null
-mv docker-compose-dev3.yml docker-compose.yml
+gsed -i '/container_name: bia/a container_name: bia1' docker-compose-dev.yml
+gsed -i 's/container_name: bia1/    env_file: .env/g' docker-compose-dev.yml
+#
+#gsed -i '/container_name: bia/container_name: bia1' docker-compose-dev.yml
+#
+#gsed -i '/server:$/a \ container_name: bia' docker-compose-dev.yml
+#gsed -e "s/\r//g" docker-compose-dev.yml > docker-compose-dev2.yml
+#rm  docker-compose-dev.yml 2> /dev/null
+#cat  docker-compose-dev2.yml | col -b > docker-compose-dev3.yml
+#rm  docker-compose-dev2.yml 2> /dev/null
+mv docker-compose-dev.yml docker-compose.yml
 #-----------------SEM O *EB CLI*----OBS: COmenta e descomenta de acordo com uso
 #rm bia-versao-*zip
 #zip -r bia-versao-$versao.zip docker-compose.yml
