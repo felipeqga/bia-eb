@@ -9,7 +9,7 @@ const Header = ({ title, onAdd, showAdd }) => {
       {/* <h3>process.env.EMAIL_ALUNO</h3> */}
       {location.pathname === "/" && (
         <Button
-          color={showAdd ? "red" : "green"}
+          color={showAdd ? "black" : "blue"}
           text={showAdd ? "Close" : "Add"}
           onClick={onAdd}
         />
@@ -19,7 +19,7 @@ const Header = ({ title, onAdd, showAdd }) => {
 };
 
 Header.defaultProps = {
-  title: "BIA EB V2 - EB+CDN",
+  title: "BIA EB V2 - EB+CDN + CACHE ASSETS",
 };
 
 export default Header;
